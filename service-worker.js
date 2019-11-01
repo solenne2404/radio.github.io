@@ -6,8 +6,8 @@ const DATA_CACHE_NAME = "data-cache-v1";
 
 // CODELAB: Update cache names any time any of the cached files change.
 const FILES_TO_CACHE = [
-    "offline1.html",
-    "index1.html",
+    "offline.html",
+    "index.html",
     "audio1.js",
     "main.js",
     "script.js",
