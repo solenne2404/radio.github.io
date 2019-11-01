@@ -24,8 +24,9 @@ window.addEventListener('beforeinstallprompt', (e) => {
             });
     });
     // Update UI notify the user they can add to home screen
-    document.querySelector('#installBanner').style.display = 'flex';  
+   
 });
 window.addEventListener('appinstalled', (evt) => {
     console.log('Radio Beton installed');
+    document.getElementById('installBanner').style.display = 'none';
 });
