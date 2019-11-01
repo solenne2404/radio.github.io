@@ -1,5 +1,6 @@
 let deferredInstallPrompt = null;
 const installButton = document.getElementById('butInstall');
+document.getElementById('installBanner').style.display = 'none';
 
 
 // CODELAB: Add event listener for beforeinstallprompt event
@@ -24,7 +25,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
             });
     });
     // Update UI notify the user they can add to home screen
-   
+    document.getElementById('installBanner').style.display = 'flex';
 });
 window.addEventListener('appinstalled', (evt) => {
     console.log('Radio Beton installed');
