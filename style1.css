@@ -40,7 +40,7 @@ body {
     background-color: #CC0000;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 70px;
+    padding-top: 20px;
     box-shadow: inset 7px 8px 30px -7px rgba(0,0,0,0.75), 16px 13px 30px -7px rgba(0,0,0,0.75);
   }
   
@@ -196,7 +196,7 @@ Sur grand ecran
     }
 
     .left-nav a {
-      margin: 60px;
+      margin: 40px;
     }
 
     .page {
