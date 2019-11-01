@@ -175,7 +175,7 @@ Bouton d'installation
   
   .banner {
     align-content: center;
-
+    display : none;
     justify-content: center;
     width: 100%;
   }

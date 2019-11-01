@@ -1,6 +1,5 @@
 let deferredInstallPrompt = null;
 const installButton = document.getElementById('butInstall');
-document.getElementById('installBanner').style.display = 'none';
 
 
 // CODELAB: Add event listener for beforeinstallprompt event
@@ -29,5 +28,5 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 window.addEventListener('appinstalled', (evt) => {
     console.log('Radio Beton installed');
-    document.getElementById('installBanner').style.display = 'none';
+ 
 });
