@@ -215,7 +215,7 @@ Sur grand ecran
     }
 
     .disc {
-      height: 360px;
+      height: 330px;
     }
 
     #modelec i {
@@ -223,7 +223,13 @@ Sur grand ecran
     }
   
     .logo img {
-      height: 170px;
+      height: 120px;
+    }
+
+    .install {
+      margin-top: 0px;
+      padding-bottom: 15px;
+      
     }
   }
   
