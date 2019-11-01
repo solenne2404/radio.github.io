@@ -161,7 +161,7 @@ Bouton d'installation
   .install {
     background: none;
     border: none;
-    display: block;
+    display: none;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
