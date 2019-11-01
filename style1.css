@@ -1,16 +1,14 @@
 html {
   position: fixed;
   width: 100%;
-}
-
-body {
   background: linear-gradient(
     rgba(255, 255, 255, 0.45), 
     rgba(204, 0, 0, 0.308)
     ),url(img/affiche.jpg);
   background-attachment: fixed;
   height: 100%;
-  }
+}
+
 
   .page {
     display: flex;
@@ -180,7 +178,7 @@ Bouton d'installation
   
   .banner {
     align-content: center;
-    display : none;
+   
     justify-content: center;
     width: 100%;
   }
