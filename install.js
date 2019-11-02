@@ -29,5 +29,4 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 window.addEventListener('appinstalled', (evt) => {
     console.log('Radio Beton installed');
- 
 });
