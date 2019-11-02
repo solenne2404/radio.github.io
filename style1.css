@@ -159,7 +159,7 @@ Navigation
     align-items: center;
   }
   
-  .left-nav a:hover, .offcanvas a:focus{
+  .left-nav a:hover {
       color: #f1f1f1;
   }
   
