@@ -1,38 +1,117 @@
 html {
-  position: fixed;
   width: 100%;
-  background: linear-gradient(
+    height: 100%;
+    background: linear-gradient(
     rgba(255, 255, 255, 0.45), 
     rgba(204, 0, 0, 0.308)
     ),url(img/affiche.jpg);
-  background-attachment: fixed;
-  height: 100%;
+    background-attachment: fixed;
 }
 
+body{
+  width: 95%;
+  height: 95%;
+  display: grid;
+  grid-template-rows: 35% 50% 15%;
+  grid-gap: 1%;
+  grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+}
 
-  .page {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-  }
+/******************************************************
+HEADER
+**************************************************************/
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-rows: 20% 80%;
+  grid-template-columns: 15% 70% 15%;
+  grid-template-areas: 
+  "hamburger a a"
+  "b logo c";
+}
 
-  .logo {
-    margin-top: 25px;
-  }
+.menuhamburger{
+  grid-area: hamburger;
+  align-self: center;
+  justify-self: center;
+  font-size:30px;
+  font-weight: 900;
+  color:#CC0000;
+  cursor:pointer;
+}
 
-  .deconnection {
-    font-size: 2rem;
-    font-weight: bold;
+.logo {
+ grid-area: logo;
+ justify-self: center;
+ align-self: center;
+ max-width: 80%;
+}
+
+/**********************************************************************
+PLAYER
+*******************************************************************/
+.record {
+  grid-area: main;
+  display: grid;
+  grid-template-rows: 10% 80% 10%;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-areas: 
+  "a a a"
+  "b lec c"
+  "d d d";
+}
+.disc {
+  grid-area: lec;
+  max-width: 80%;
+  max-height: 100%;
+  align-self: center;
+  justify-self: center;
+}
+
+#modelec {
+  grid-area: lec;
+  align-self: center;
+  justify-self: center;
+  z-index: 2;
+}
+
+#modelec i {
+  color: #CC0000;
+  font-size: 4em;
+}
+/**** animation du disque  ***/
+
+@-webkit-keyframes rotation {
+  0% {
+    transform: rotate(0deg);
   }
-  /******************************************************
-  Navigation
-  *******************************************************/
-  .menuhamburger{
-    font-size:30px;
-    color:#CC0000;
-    cursor:pointer;
+  to {
+    transform: rotate(360deg);
   }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/***************************************************************
+Offline
+*****************************************************************/
+.deconnection {
+  font-size: 2rem;
+  font-weight: bold;
+}
+/******************************************************
+Navigation
+*******************************************************/
 
   .left-nav {
     height: 100%;
@@ -43,17 +122,41 @@ html {
     background-color: #CC0000;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 20px;
     box-shadow: inset 7px 8px 30px -7px rgba(0,0,0,0.75), 16px 13px 30px -7px rgba(0,0,0,0.75);
+    display: grid;
+    grid-template-rows: repeat(7, auto);
+    grid-template-areas: 
+    "paddingtop"
+    "beton"
+    "aucard"
+    "podcast"
+    "facebook"
+    "twitter"
+    "paddingbottom";
   }
-  
+  .beton{
+    grid-area: beton;
+  }
+  .aucard{
+    grid-area: aucard;
+  }
+  .podcast{
+    grid-area: podcast;
+  }
+  .facebook{
+    grid-area: facebook;
+  }
+  .twitter{
+    grid-area: twitter;
+  }
   .left-nav a {
-    padding: 8px 8px 8px 5px;
     text-decoration: none;
     font-size: 20px;
     color: #818181;
-    display: block;
     transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .left-nav a:hover, .offcanvas a:focus{
@@ -75,93 +178,23 @@ html {
     font: 900;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-top: 5px;
-    margin-bottom:5px;
-    text-align: center;
     color: rgb(255, 107, 107);
   }
 
   .left-nav span {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    letter-spacing: 2px;
-    margin-bottom:5px;
-    text-align: center;
     font-size: 3em; 
     color:rgb(255, 107, 107);
   }
 
-  .left-nav img {
-    margin-top: 5px;
-    margin-bottom: 5px;
-  }
-  
-  /***********************************************
-   Image du disc
-   ***********************************************/
 
-  .record {
-    padding: 22px 0 0 0;
-    display: grid;
-    grid-template-columns: 40px  auto  40px;
-    grid-template-rows: 25px auto 25px;
-  }
-
-  img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 60px;
-  }
-
-
-  #modelec {
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 2;
-    align-self: center;
-    justify-self: center;
-    z-index: 2;
-  }
- 
-
-  #modelec i {
-    color: #CC0000;
-    font-size: 3em;
-  }
-
-  @-webkit-keyframes rotation {
-    0% {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  @keyframes rotation {
-    0% {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  .disc {
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 2;
-    height: 250px;
-
-  }
 /**************************************************************
 Bouton d'installation
 ***************************************************************/
-  .install {
+footer {
+  grid-area: footer;
+}
+
+.install {
     background: none;
     border: none;
     display: block;
@@ -178,9 +211,7 @@ Bouton d'installation
   
   .banner {
     align-content: center;
-   
     justify-content: center;
-    width: 100%;
   }
 /***************************************************************************
 Sur grand ecran
@@ -189,43 +220,43 @@ Sur grand ecran
 
   @media  all and (min-width: 1024px) {
 
+    body{
+      width: 95%;
+      height: 95%;
+      display: grid;
+      grid-template-rows: 35% 45% 20%;
+      grid-template-columns: 300px auto;
+      grid-gap: 5%;
+      grid-template-areas: 
+        "nav header"
+        "nav main"
+        "nav footer";
+    }
+
     .left-nav {
       overflow-x: visible;
+      grid-area: nav;
       width: 300px;
     }
 
-    .left-nav .closebtn, .exit, .menuhamburger{
+    .left-nav .closebtn, .menuhamburger{
       visibility: hidden;
-    }
-
-    .left-nav a {
-      margin: 40px;
-    }
-
-    .page {
-      margin-left: 300px;
-      margin-top: 20px;
-      height: 100vh;
     }
 
     .install , .left-nav p {
       font-size: 1.5em;
     }
 
-    .disc {
-      height: 330px;
-    }
-
     #modelec i {
-      font-size: 7em;
+      font-size: 6em;
     }
   
     .logo img {
-      height: 120px;
+      height: 100px;
     }
 
     .install {
-      margin-top: 0px;
+      margin-top: 10px;
       padding-bottom: 15px;
       
     }
